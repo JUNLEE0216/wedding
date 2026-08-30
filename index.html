@@ -28,17 +28,12 @@
 </template>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: #e7dfd0; font-family: 'Noto Sans KR', sans-serif; -webkit-font-smoothing: antialiased; }
+  body { word-break: keep-all; overflow-wrap: anywhere; text-wrap: pretty; background: #e7dfd0; font-family: 'Noto Sans KR', sans-serif; -webkit-font-smoothing: antialiased; }
   a { color: var(--accent); text-decoration: none; }
   a:hover { opacity: .75; }
   @keyframes floatIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
   html, body { overflow-x: hidden; max-width: 100%; }
   img, .tl-media { max-width: 100%; }
-  @media (max-width: 430px) {
-    .tl-row { gap: 18px !important; }
-    .tl-row .tl-text p { font-size: 12.5px !important; }
-    .tl-row .tl-text h3 { font-size: 16px !important; }
-  }
   @keyframes coverFade { from { opacity: 0; transform: scale(1.04); } to { opacity: 1; transform: none; } }
   @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
   @keyframes heartPulse { 0%,100% { transform: translateX(-50%) scale(1); } 50% { transform: translateX(-50%) scale(1.22); } }
@@ -57,8 +52,8 @@
       <span style="position: absolute; left: 0; right: 0; bottom: 0; height: 22%; background: linear-gradient(to bottom, rgba(251,248,242,0), #fbf8f2);"></span>
     </div>
 
-    <h1 style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-style: italic; font-size: 40px; line-height: 1.15; color: #2c2822; margin-top: 4px;">Junwoo<br><span style="font-size: 22px; font-style: normal; letter-spacing: .1em;">&amp;</span><br>Hyemin</h1>
-    <p style="font-family: 'Gowun Batang', serif; font-size: 20px; letter-spacing: .3em; color: #4a443a; margin-top: 20px;">준우 · 혜민</p>
+    <h1 style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-style: italic; font-size: clamp(32px, 9vw, 40px); line-height: 1.15; color: #2c2822; margin-top: 4px;">Junwoo<br><span style="font-size: 22px; font-style: normal; letter-spacing: .1em;">&amp;</span><br>Hyemin</h1>
+    <p style="font-family: 'Gowun Batang', serif; font-size: clamp(17px, 5vw, 20px); letter-spacing: .28em; color: #4a443a; margin-top: 20px;">준우 · 혜민</p>
 
     <div style="display: flex; align-items: center; justify-content: center; gap: 12px; width: 84px; margin: 26px 0;">
       <span style="height: 1px; flex: 1; background: var(--accent); opacity: .45;"></span>
@@ -66,16 +61,16 @@
       <span style="height: 1px; flex: 1; background: var(--accent); opacity: .45;"></span>
     </div>
 
-    <p style="font-family: 'Gowun Batang', serif; font-size: 17px; letter-spacing: .04em; color: #3a352d;">2026. 12. 06 &nbsp;일요일 &nbsp;오전 11시 30분</p>
+    <p style="font-family: 'Gowun Batang', serif; font-size: clamp(15px, 4.3vw, 17px); letter-spacing: .04em; color: #3a352d;">2026. 12. 06 &nbsp;일요일 &nbsp;오전 11시 30분</p>
     <p style="font-size: 13px; letter-spacing: .05em; color: #8a8175; margin-top: 8px;">라도무스 아트센터 &nbsp;3F 라도무스홀</p>
   </section>
 
   <!-- ============ GREETING ============ -->
   <section style="padding: 78px clamp(20px, 6vw, 38px) 74px; text-align: center;">
     <p style="font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: .4em; text-transform: uppercase; color: var(--accent);">Invitation</p>
-    <h2 style="font-family: 'Gowun Batang', serif; font-size: 24px; letter-spacing: .06em; color: #2c2822; margin: 14px 0 40px;">소중한 분들을 초대합니다</h2>
+    <h2 style="font-family: 'Gowun Batang', serif; font-size: clamp(20px, 5.6vw, 24px); letter-spacing: .06em; color: #2c2822; margin: 14px 0 40px;">소중한 분들을 초대합니다</h2>
 
-    <p style="font-family: 'Gowun Batang', serif; font-size: 16px; line-height: 2.5; color: #4a443a; text-wrap: pretty;">
+    <p style="font-family: 'Gowun Batang', serif; font-size: clamp(14px, 4.1vw, 16px); line-height: 2.4; color: #4a443a; text-wrap: pretty;">
       서로의 모든 계절을 아는<br>
       사람을 만났습니다.<br><br>
       열 번의 겨울을 함께 보내며<br>
@@ -94,8 +89,8 @@
     </div>
 
     <div style="border-top: 1px solid #e6ddce; border-bottom: 1px solid #e6ddce; padding: 26px 0; line-height: 2.4;">
-      <p style="font-size: 15px; letter-spacing: .08em; color: #3a352d;">이옥석 · 이명혜 <span style="color: #a59a89;">의 차남</span> <span style="font-family: 'Gowun Batang', serif; font-weight: 700;">준우</span></p>
-      <p style="font-size: 15px; letter-spacing: .08em; color: #3a352d;">이정욱 · 이지현 <span style="color: #a59a89;">의 차녀</span> <span style="font-family: 'Gowun Batang', serif; font-weight: 700;">혜민</span></p>
+      <p style="font-size: clamp(13.5px, 3.9vw, 15px); letter-spacing: .06em; color: #3a352d;">이옥석 · 이명혜 <span style="color: #a59a89;">의 차남</span> <span style="font-family: 'Gowun Batang', serif; font-weight: 700;">준우</span></p>
+      <p style="font-size: clamp(13.5px, 3.9vw, 15px); letter-spacing: .06em; color: #3a352d;">이정욱 · 이지현 <span style="color: #a59a89;">의 차녀</span> <span style="font-family: 'Gowun Batang', serif; font-weight: 700;">혜민</span></p>
     </div>
   </section>
 
@@ -103,32 +98,32 @@
   <section style="padding: 78px clamp(20px, 6vw, 38px) 74px; background: #f4efe6;">
     <div style="text-align: center; margin-bottom: 50px;">
       <p style="font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: .4em; text-transform: uppercase; color: var(--accent);">Our Timeline</p>
-      <h2 style="font-family: 'Gowun Batang', serif; font-size: 24px; letter-spacing: .06em; color: #2c2822; margin-top: 14px;">우리가 걸어온 그 길</h2>
+      <h2 style="font-family: 'Gowun Batang', serif; font-size: clamp(20px, 5.6vw, 24px); letter-spacing: .06em; color: #2c2822; margin-top: 14px;">우리가 걸어온 그 길</h2>
     </div>
 
     <div style="position: relative;">
       <span class="tl-line" style="position: absolute; left: 50%; top: 16px; bottom: 24px; width: 1px; background: #d8cdba; transform: translateX(-50%);"></span>
 
       <!-- Row 1: photo left / text right -->
-      <div class="tl-row" style="position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; margin-bottom: 40px;">
+      <div class="tl-row" style="position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 4.6vw, 32px); align-items: center; margin-bottom: 40px;">
         <span class="tl-dot" style="position: absolute; left: 50%; top: 50%; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); transform: translate(-50%,-50%); box-shadow: 0 0 0 4px #f4efe6;"></span>
         <div class="tl-media" style="position: relative; width: 100%; aspect-ratio: 4/3; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(80,65,45,.14); filter: contrast(.9) saturate(.82) brightness(1.06) sepia(.1);">
           <img src="assets/tl1-nz.jpg" alt="뉴질랜드" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </div>
         <div class="tl-text" style="text-align: left;">
-          <p style="font-size: 13px; letter-spacing: .03em; color: #a59a89; margin-bottom: 8px;">17년 2월, 뉴질랜드</p>
-          <h3 style="font-family: 'Gowun Batang', serif; font-size: 18px; color: #2c2822; margin-bottom: 12px;">💗 운명 같은 첫 만남</h3>
-          <p style="font-size: 13.5px; line-height: 1.75; color: #8a8175;">지구 반대편에서 시작된<br>우리만의 운명 같은 만남</p>
+          <p style="font-size: clamp(11.5px, 3.3vw, 13px); letter-spacing: .03em; color: #a59a89; margin-bottom: 8px;">17년 2월, 뉴질랜드</p>
+          <h3 style="font-family: 'Gowun Batang', serif; font-size: clamp(15px, 4.4vw, 18px); color: #2c2822; margin-bottom: 12px;">💗 운명 같은 첫 만남</h3>
+          <p style="font-size: clamp(12px, 3.5vw, 13.5px); line-height: 1.8; color: #8a8175;">지구 반대편에서 시작된 우리만의 운명 같은 만남</p>
         </div>
       </div>
 
       <!-- Row 2: text left / photo right -->
-      <div class="tl-row" style="position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; margin-bottom: 40px;">
+      <div class="tl-row" style="position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 4.6vw, 32px); align-items: center; margin-bottom: 40px;">
         <span class="tl-dot" style="position: absolute; left: 50%; top: 50%; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); transform: translate(-50%,-50%); box-shadow: 0 0 0 4px #f4efe6;"></span>
         <div class="tl-text" style="text-align: left;">
-          <p style="font-size: 13px; letter-spacing: .03em; color: #a59a89; margin-bottom: 8px;">어느새 3400일</p>
-          <h3 style="font-family: 'Gowun Batang', serif; font-size: 18px; color: #2c2822; margin-bottom: 12px;">함께 쌓아온 날들</h3>
-          <p style="font-size: 13.5px; line-height: 1.75; color: #8a8175;">오랜 시간 서로의 곁에서<br>소중하게 쌓아온 3400일의 기억</p>
+          <p style="font-size: clamp(11.5px, 3.3vw, 13px); letter-spacing: .03em; color: #a59a89; margin-bottom: 8px;">어느새 3400일</p>
+          <h3 style="font-family: 'Gowun Batang', serif; font-size: clamp(15px, 4.4vw, 18px); color: #2c2822; margin-bottom: 12px;">함께 쌓아온 날들</h3>
+          <p style="font-size: clamp(12px, 3.5vw, 13.5px); line-height: 1.8; color: #8a8175;">오랜 시간 서로의 곁에서 소중하게 쌓아온 3400일의 기억</p>
         </div>
         <div class="tl-media" style="position: relative; width: 100%; aspect-ratio: 4/3; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(80,65,45,.14);">
           <img src="assets/web-tl2.png" alt="함께 쌓아온 날들" style="width: 100%; height: 100%; object-fit: cover; display: block;">
@@ -136,25 +131,25 @@
       </div>
 
       <!-- Row 3: photo left / text right -->
-      <div class="tl-row" style="position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; margin-bottom: 40px;">
+      <div class="tl-row" style="position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 4.6vw, 32px); align-items: center; margin-bottom: 40px;">
         <span class="tl-dot" style="position: absolute; left: 50%; top: 50%; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); transform: translate(-50%,-50%); box-shadow: 0 0 0 4px #f4efe6;"></span>
         <div class="tl-media" style="position: relative; width: 100%; aspect-ratio: 4/3; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(80,65,45,.14);">
           <img src="assets/web-tl3.png" alt="프로포즈" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </div>
         <div class="tl-text" style="text-align: left;">
-          <p style="font-size: 13px; letter-spacing: .03em; color: #a59a89; margin-bottom: 8px;">대답은 "YES!"</p>
-          <h3 style="font-family: 'Gowun Batang', serif; font-size: 18px; color: #2c2822; margin-bottom: 12px;">💐 프로포즈</h3>
-          <p style="font-size: 13.5px; line-height: 1.75; color: #8a8175;">새로운 약속의 시작<br>같은 미래를 품에 안은<br>단 하나의 약속</p>
+          <p style="font-size: clamp(11.5px, 3.3vw, 13px); letter-spacing: .03em; color: #a59a89; margin-bottom: 8px;">대답은 "YES!"</p>
+          <h3 style="font-family: 'Gowun Batang', serif; font-size: clamp(15px, 4.4vw, 18px); color: #2c2822; margin-bottom: 12px;">💐 프로포즈</h3>
+          <p style="font-size: clamp(12px, 3.5vw, 13.5px); line-height: 1.8; color: #8a8175;">새로운 약속의 시작, 같은 미래를 품에 안은 단 하나의 약속</p>
         </div>
       </div>
 
       <!-- Row 4: text left / photo right -->
-      <div class="tl-row" style="position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;">
+      <div class="tl-row" style="position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 4.6vw, 32px); align-items: center;">
         <span class="tl-dot" style="position: absolute; left: 50%; top: 50%; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); transform: translate(-50%,-50%); box-shadow: 0 0 0 4px #f4efe6;"></span>
         <div class="tl-text" style="text-align: left;">
-          <p style="font-size: 13px; letter-spacing: .03em; color: #a59a89; margin-bottom: 8px;">26년 12월</p>
-          <h3 style="font-family: 'Gowun Batang', serif; font-size: 18px; color: #2c2822; margin-bottom: 12px;">웨딩데이 💎</h3>
-          <p style="font-size: 13.5px; line-height: 1.75; color: #8a8175;">너와 나 = 우리<br>영원히 함께할 부부로의 첫 걸음</p>
+          <p style="font-size: clamp(11.5px, 3.3vw, 13px); letter-spacing: .03em; color: #a59a89; margin-bottom: 8px;">26년 12월</p>
+          <h3 style="font-family: 'Gowun Batang', serif; font-size: clamp(15px, 4.4vw, 18px); color: #2c2822; margin-bottom: 12px;">웨딩데이 💎</h3>
+          <p style="font-size: clamp(12px, 3.5vw, 13.5px); line-height: 1.8; color: #8a8175;">너와 나 = 우리, 영원히 함께할 부부로의 첫 걸음</p>
         </div>
         <div class="tl-media" style="position: relative; width: 100%; aspect-ratio: 4/3; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(80,65,45,.14);">
           <img src="assets/web-wedding.png" alt="웨딩데이" style="width: 100%; height: 100%; object-fit: cover; display: block;">
@@ -165,7 +160,7 @@
   <!-- ============ CALENDAR + COUNTDOWN ============ -->
   <section style="padding: 78px clamp(20px, 6vw, 38px) 74px; text-align: center;">
     <p style="font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: .4em; text-transform: uppercase; color: var(--accent);">Wedding Day</p>
-    <h2 style="font-family: 'Gowun Batang', serif; font-size: 22px; letter-spacing: .04em; color: #2c2822; margin: 14px 0 38px;">2026년 12월 6일 일요일 오전 11시 30분</h2>
+    <h2 style="font-family: 'Gowun Batang', serif; font-size: clamp(17px, 4.8vw, 22px); letter-spacing: .04em; color: #2c2822; margin: 14px 0 38px;">2026년 12월 6일 일요일 오전 11시 30분</h2>
 
     <div style="display: grid; grid-template-columns: repeat(7, 1fr); row-gap: 6px; margin-bottom: 8px;">
       <span style="font-size: 13px; color: #c98b7a; letter-spacing: .05em;">일</span>
@@ -191,28 +186,28 @@
 
     <sc-if value="{{ showDday }}" hint-placeholder-val="{{ true }}">
       <div style="margin-top: 44px; padding: 30px 20px 26px; background: #f7f2e9; border: 1px solid #e6ddce; border-radius: 6px;">
-        <div style="display: flex; align-items: flex-start; justify-content: center; gap: 10px;">
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 58px;">
-            <span style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 44px; line-height: 1; color: #3a352d;">{{ cd.d }}</span>
-            <span style="font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: #a59a89;">Days</span>
+        <div style="display: flex; align-items: flex-start; justify-content: center; gap: clamp(2px, 1.2vw, 10px);">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 0; flex: 1 1 0;">
+            <span style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(28px, 8.2vw, 44px); line-height: 1; color: #3a352d;">{{ cd.d }}</span>
+            <span style="font-family: 'Cormorant Garamond', serif; font-size: clamp(9px, 2.6vw, 11px); letter-spacing: .18em; text-transform: uppercase; color: #a59a89;">Days</span>
           </div>
-          <span style="font-family: 'Cormorant Garamond', serif; font-size: 30px; color: #cfc3ae;">:</span>
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 58px;">
-            <span style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 44px; line-height: 1; color: #3a352d;">{{ cd.h }}</span>
-            <span style="font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: #a59a89;">Hours</span>
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: clamp(18px, 5.4vw, 30px); color: #cfc3ae;">:</span>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 0; flex: 1 1 0;">
+            <span style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(28px, 8.2vw, 44px); line-height: 1; color: #3a352d;">{{ cd.h }}</span>
+            <span style="font-family: 'Cormorant Garamond', serif; font-size: clamp(9px, 2.6vw, 11px); letter-spacing: .18em; text-transform: uppercase; color: #a59a89;">Hours</span>
           </div>
-          <span style="font-family: 'Cormorant Garamond', serif; font-size: 30px; color: #cfc3ae;">:</span>
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 58px;">
-            <span style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 44px; line-height: 1; color: #3a352d;">{{ cd.m }}</span>
-            <span style="font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: #a59a89;">Min</span>
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: clamp(18px, 5.4vw, 30px); color: #cfc3ae;">:</span>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 0; flex: 1 1 0;">
+            <span style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(28px, 8.2vw, 44px); line-height: 1; color: #3a352d;">{{ cd.m }}</span>
+            <span style="font-family: 'Cormorant Garamond', serif; font-size: clamp(9px, 2.6vw, 11px); letter-spacing: .18em; text-transform: uppercase; color: #a59a89;">Min</span>
           </div>
-          <span style="font-family: 'Cormorant Garamond', serif; font-size: 30px; color: #cfc3ae;">:</span>
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 58px;">
-            <span style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 44px; line-height: 1; color: #3a352d;">{{ cd.s }}</span>
-            <span style="font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: #a59a89;">Sec</span>
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: clamp(18px, 5.4vw, 30px); color: #cfc3ae;">:</span>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 0; flex: 1 1 0;">
+            <span style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(28px, 8.2vw, 44px); line-height: 1; color: #3a352d;">{{ cd.s }}</span>
+            <span style="font-family: 'Cormorant Garamond', serif; font-size: clamp(9px, 2.6vw, 11px); letter-spacing: .18em; text-transform: uppercase; color: #a59a89;">Sec</span>
           </div>
         </div>
-        <p style="margin-top: 24px; font-family: 'Gowun Batang', serif; font-size: 15px; letter-spacing: .02em; line-height: 1.7; color: #6b6357;">준우 <span style="color: #cfa1a6;">♥</span> 혜민의 결혼식이 <span style="color: var(--accent);">{{ dday }}</span>일 남았습니다.</p>
+        <p style="margin-top: 24px; font-family: 'Gowun Batang', serif; font-size: clamp(13px, 3.8vw, 15px); letter-spacing: .02em; line-height: 1.7; color: #6b6357;">준우 <span style="color: #cfa1a6;">♥</span> 혜민의 결혼식이 <span style="color: var(--accent);">{{ dday }}</span>일 남았습니다.</p>
       </div>
     </sc-if>
   </section>
@@ -220,8 +215,8 @@
   <!-- ============ GALLERY ============ -->
   <section style="padding: 78px clamp(20px, 6vw, 38px) 74px; background: #f4efe6; text-align: center;">
     <p style="font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: .4em; text-transform: uppercase; color: var(--accent);">Gallery</p>
-    <h2 style="font-family: 'Gowun Batang', serif; font-size: 24px; letter-spacing: .06em; color: #2c2822; margin: 14px 0 36px;">순간의 기록</h2>
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+    <h2 style="font-family: 'Gowun Batang', serif; font-size: clamp(20px, 5.6vw, 24px); letter-spacing: .06em; color: #2c2822; margin: 14px 0 36px;">순간의 기록</h2>
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(7px, 2.4vw, 10px);">
       <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="6">
         <div style="position: relative; width: 100%; aspect-ratio: 1; border-radius: 4px; overflow: hidden;">
           <image-slot id="{{ g.id }}" shape="rounded" radius="4" fit="cover" placeholder="{{ g.label }}"></image-slot>
@@ -234,7 +229,7 @@
   <!-- ============ LOCATION ============ -->
   <section style="padding: 78px clamp(18px, 5vw, 30px) 74px; text-align: center;">
     <p style="font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: .4em; text-transform: uppercase; color: var(--accent);">Location</p>
-    <h2 style="font-family: 'Gowun Batang', serif; font-size: 24px; letter-spacing: .06em; color: #2c2822; margin: 14px 0 6px;">오시는 길</h2>
+    <h2 style="font-family: 'Gowun Batang', serif; font-size: clamp(20px, 5.6vw, 24px); letter-spacing: .06em; color: #2c2822; margin: 14px 0 6px;">오시는 길</h2>
     <p style="font-family: 'Cormorant Garamond', serif; font-size: 13px; letter-spacing: .28em; color: #a59a89; text-transform: uppercase;">La Domus Art Center</p>
     <p style="font-size: 14px; line-height: 1.7; color: #6b6357; margin-top: 18px;">대전 유성구 동서대로 639<br>(원신흥동 578-6) 3F 라도무스홀</p>
     <p style="font-size: 13px; letter-spacing: .06em; color: #8a8175; margin-top: 8px;">T. 042 - 823 - 5220</p>
@@ -256,7 +251,7 @@
   <!-- ============ ACCOUNTS ============ -->
   <section style="padding: 78px clamp(20px, 6vw, 34px) 74px; background: #f4efe6; text-align: center;">
     <p style="font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: .4em; text-transform: uppercase; color: var(--accent);">With Heart</p>
-    <h2 style="font-family: 'Gowun Batang', serif; font-size: 24px; letter-spacing: .06em; color: #2c2822; margin: 14px 0 12px;">마음 전하실 곳</h2>
+    <h2 style="font-family: 'Gowun Batang', serif; font-size: clamp(20px, 5.6vw, 24px); letter-spacing: .06em; color: #2c2822; margin: 14px 0 12px;">마음 전하실 곳</h2>
     <p style="font-size: 13px; line-height: 1.8; color: #8a8175; margin-bottom: 34px;">축하의 마음을 담아 축의금을 전달하실 수 있도록<br>계좌번호를 안내드립니다.</p>
 
     <div style="display: flex; gap: 8px; margin-bottom: 22px;">
