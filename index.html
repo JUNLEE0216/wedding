@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<meta name="description" content="준우 · 혜민 결혼합니다. 2026년 12월 6일 일요일 오전 11시 30분, 라도무스 아트센터 3F 라도무스홀">
+<meta property="og:type" content="website">
+<meta property="og:title" content="준우 ♥ 혜민 결혼합니다">
+<meta property="og:description" content="2026. 12. 06 일요일 오전 11시 30분 · 라도무스 아트센터 3F 라도무스홀">
+<meta property="og:image" content="assets/web-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <rect width="100" height="100" fill="#f4efe6"></rect>
+    <text x="50" y="44" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="19" fill="#a9854a">J &amp; H</text>
+    <path d="M32 56 H68" stroke="#a9854a" stroke-width="1"></path>
+    <text x="50" y="70" text-anchor="middle" font-family="Georgia, serif" font-size="9" letter-spacing="1.6" fill="#8a8175">2026.12.06</text>
+  </svg>
+</template>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #e7dfd0; font-family: 'Noto Sans KR', sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { opacity: .75; }
+  @keyframes floatIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  html, body { overflow-x: hidden; max-width: 100%; }
+  img, .tl-media { max-width: 100%; }
+  @media (max-width: 430px) {
+    .tl-row { grid-template-columns: 1fr !important; gap: 14px !important; }
+    .tl-row .tl-text { text-align: center !important; }
+    .tl-row .tl-media { order: -1; }
+    .tl-line, .tl-dot { display: none !important; }
+  }
+  @keyframes coverFade { from { opacity: 0; transform: scale(1.04); } to { opacity: 1; transform: none; } }
+  @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  @keyframes heartPulse { 0%,100% { transform: translateX(-50%) scale(1); } 50% { transform: translateX(-50%) scale(1.22); } }
+  @keyframes floatUp { 0% { opacity: 0; transform: translateY(6px) scale(.7); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(-36px) scale(1); } }
+  @keyframes twinkle { 0%,100% { opacity: .2; transform: scale(.6); } 50% { opacity: 1; transform: scale(1.1); } }
+  @keyframes sway { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+  @keyframes fall { 0% { opacity: 0; transform: translateY(-8px) rotate(0); } 15% { opacity: 1; } 100% { opacity: 0; transform: translateY(64px) rotate(220deg); } }
+</style>
+</helmet>
+<div style="--accent: {{ accent }}; --photoFilter: {{ photoFilter }}; max-width: 480px; margin: 0 auto; background: #fbf8f2; color: #2c2822; overflow: hidden; box-shadow: 0 0 60px rgba(60,50,35,.18);">
+
+  <!-- ============ COVER ============ -->
+  <section style="padding: 0 clamp(18px, 5vw, 34px) 52px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <div style="position: relative; width: calc(100% + 2 * clamp(18px, 5vw, 34px)); margin: 0 calc(-1 * clamp(18px, 5vw, 34px)); aspect-ratio: 2/3; overflow: hidden; filter: var(--photoFilter); background: #ded6c8; animation: coverFade 1.8s ease both;">
+      <img src="assets/web-cover.png" alt="준우 · 혜민" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+      <span style="position: absolute; left: 0; right: 0; bottom: 0; height: 22%; background: linear-gradient(to bottom, rgba(251,248,242,0), #fbf8f2);"></span>
+    </div>
+
+    <h1 style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-style: italic; font-size: 40px; line-height: 1.15; color: #2c2822; margin-top: 4px;">Junwoo<br><span style="font-size: 22px; font-style: normal; letter-spacing: .1em;">&amp;</span><br>Hyemin</h1>
+    <p style="font-family: 'Gowun Batang', serif; font-size: 20px; letter-spacing: .3em; color: #4a443a; margin-top: 20px;">준우 · 혜민</p>
+
+    <div style="display: flex; align-items: center; justify-content: center; gap: 12px; width: 84px; margin: 26px 0;">
+      <span style="height: 1px; flex: 1; background: var(--accent); opacity: .45;"></span>
+      <span style="width: 5px; height: 5px; transform: rotate(45deg); background: var(--accent); opacity: .8;"></span>
+      <span style="height: 1px; flex: 1; background: var(--accent); opacity: .45;"></span>
+    </div>
+
+    <p style="font-family: 'Gowun Batang', serif; font-size: 17px; letter-spacing: .04em; color: #3a352d;">2026. 12. 06 &nbsp;일요일 &nbsp;오전 11시 30분</p>
+    <p style="font-size: 13px; letter-spacing: .05em; color: #8a8175; margin-top: 8px;">라도무스 아트센터 &nbsp;3F 라도무스홀</p>
+  </section>
+
+  <!-- ============ GREETING ============ -->
+  <section style="padding: 78px clamp(20px, 6vw, 38px) 74px; text-align: center;">
+    <p style="font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: .4em; text-transform: uppercase; color: var(--accent);">Invitation</p>
+    <h2 style="font-family: 'Gowun Batang', serif; font-size: 24px; letter-spacing: .06em; color: #2c2822; margin: 14px 0 40px;">소중한 분들을 초대합니다</h2>
+
+    <p style="font-family: 'Gowun Batang', serif; font-size: 16px; line-height: 2.5; color: #4a443a; text-wrap: pretty;">
+      서로의 모든 계절을 아는<br>
+      사람을 만났습니다.<br><br>
+      열 번의 겨울을 함께 보내며<br>
+      서로에게 가장 자연스러운<br>
+      사람이 되었습니다.<br><br>
+      편안함 속에서도<br>
+      늘 고마움을 잃지 않고,<br>
+      지나온 시간보다 더 긴 날들을<br>
+      다정하게 걸어가겠습니다.<br><br>
+      따뜻한 마음으로<br>
+      저희의 출발을 함께해 주세요.
+    </p>
+
+    <div style="position: relative; width: 100%; aspect-ratio: 2/3; margin: 46px 0 38px; border-radius: 2px; overflow: hidden;">
+      <img src="assets/web-detail.png" alt="준우 · 혜민" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    </div>
+
+    <div style="border-top: 1px solid #e6ddce; border-bottom: 1px solid #e6ddce; padding: 26px 0; line-height: 2.4;">
+      <p style="font-size: 15px; letter-spacing: .08em; color: #3a352d;">이옥석 · 이명혜 <span style="color: #a59a89;">의 차남</span> <span style="font-family: 'Gowun Batang', serif; font-weight: 700;">준우</span></p>
+      <p style="font-size: 15px; letter-spacing: .08em; color: #3a352d;">이정욱 · 이지현 <span style="color: #a59a89;">의 차녀</span> <span style="font-family: 'Gowun Batang', serif; font-weight: 700;">혜민</span></p>
+    </div>
+  </section>
+
+  <!-- ============ TIMELINE ============ -->
+  <section style="padding: 78px clamp(20px, 6vw, 38px) 74px; background: #f4efe6;">
+    <div style="text-align: center; margin-bottom: 50px;">
+      <p style="font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: .4em; text-transform: uppercase; color: var(--accent);">Our Timeline</p>
+      <h2 style="font-family: 'Gowun Batang', serif; font-size: 24px; letter-spacing: .06em; color: #2c2822; margin-top: 14px;">우리가 걸어온 그 길</h2>
+    </div>
+
+    <div style="position: relative;">
+      <span class="tl-line" style="position: absolute; left: 50%; top: 16px; bottom: 24px; width: 1px; background: #d8cdba; transform: translateX(-50%);"></span>
+
+      <!-- Row 1: photo left / text right -->
+      <div class="tl-row" style="position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; margin-bottom: 40px;">
+        <span class="tl-dot" style="position: absolute; left: 50%; top: 50%; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); transform: translate(-50%,-50%); box-shadow: 0 0 0 4px #f4efe6;"></span>
+        <div class="tl-media" style="position: relative; width: 100%; aspect-ratio: 4/3; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(80,65,45,.14); filter: contrast(.9) saturate(.82) brightness(1.06) sepia(.1);">
+          <img src="assets/tl1-nz.jpg" alt="뉴질랜드" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <div class="tl-text" style="text-align: left;">
+          <p style="font-size: 13px; letter-spacing: .03em; color: #a59a89; margin-bottom: 8px;">17년 2월, 뉴질랜드</p>
+          <h3 style="font-family: 'Gowun Batang', serif; font-size: 18px; color: #2c2822; margin-bottom: 12px;">💗 운명 같은 첫 만남</h3>
+          <p style="font-size: 13.5px; line-height: 1.75; color: #8a8175;">지구 반대편에서 시작된<br>우리만의 운명 같은 만남</p>
+        </div>
+      </div>
+
+      <!-- Row 2: text left / photo right -->
+      <div class="tl-row" style="position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; margin-bottom: 40px;">
+        <span class="tl-dot" style="position: absolute; left: 50%; top: 50%; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); transform: translate(-50%,-50%); box-shadow: 0 0 0 4px #f4efe6;"></span>
+        <div class="tl-text" style="text-align: left;">
+          <p style="font-size: 13px; letter-spacing: .03em; color: #a59a89; margin-bottom: 8px;">어느새 3400일</p>
+          <h3 style="font-family: 'Gowun Batang', serif; font-size: 18px; color: #2c2822; margin-bottom: 12px;">함께 쌓아온 날들</h3>
+          <p style="font-size: 13.5px; line-height: 1.75; color: #8a8175;">오랜 시간 서로의 곁에서<br>소중하게 쌓아온 3400일의 기억</p>
+        </div>
+        <div class="tl-media" style="position: relative; width: 100%; aspect-ratio: 4/3; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(80,65,45,.14);">
+          <img src="assets/web-tl2.png" alt="함께 쌓아온 날들" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+      </div>
+
+      <!-- Row 3: photo left / text right -->
+      <div class="tl-row" style="position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; margin-bottom: 40px;">
+        <span class="tl-dot" style="position: absolute; left: 50%; top: 50%; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); transform: translate(-50%,-50%); box-shadow: 0 0 0 4px #f4efe6;"></span>
+        <div class="tl-media" style="position: relative; width: 100%; aspect-ratio: 4/3; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(80,65,45,.14);">
+          <img src="assets/tl3-ring.jpg" alt="프로포즈" style="width: 100%; height: 100%; object-fit: cover; object-position: center 62%; display: block;">
+        </div>
+        <div class="tl-text" style="text-align: left;">
+          <p style="font-size: 13px; letter-spacing: .03em; color: #a59a89; margin-bottom: 8px;">대답은 "YES!"</p>
+          <h3 style="font-family: 'Gowun Batang', serif; font-size: 18px; color: #2c2822; margin-bottom: 12px;">💐 프로포즈</h3>
+          <p style="font-size: 13.5px; line-height: 1.75; color: #8a8175;">새로운 약속의 시작<br>같은 미래를 품에 안은<br>단 하나의 약속</p>
+        </div>
+      </div>
+
+      <!-- Row 4: text left / photo right -->
+      <div class="tl-row" style="position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;">
+        <span class="tl-dot" style="position: absolute; left: 50%; top: 50%; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); transform: translate(-50%,-50%); box-shadow: 0 0 0 4px #f4efe6;"></span>
+        <div class="tl-text" style="text-align: left;">
+          <p style="font-size: 13px; letter-spacing: .03em; color: #a59a89; margin-bottom: 8px;">26년 12월</p>
+          <h3 style="font-family: 'Gowun Batang', serif; font-size: 18px; color: #2c2822; margin-bottom: 12px;">웨딩데이 💎</h3>
+          <p style="font-size: 13.5px; line-height: 1.75; color: #8a8175;">너와 나 = 우리<br>영원히 함께할 부부로의 첫 걸음</p>
+        </div>
+        <div class="tl-media" style="position: relative; width: 100%; aspect-ratio: 4/3; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(80,65,45,.14);">
+          <img src="assets/web-wedding.png" alt="웨딩데이" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============ CALENDAR + COUNTDOWN ============ -->
+  <section style="padding: 78px clamp(20px, 6vw, 38px) 74px; text-align: center;">
+    <p style="font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: .4em; text-transform: uppercase; color: var(--accent);">Wedding Day</p>
+    <h2 style="font-family: 'Gowun Batang', serif; font-size: 22px; letter-spacing: .04em; color: #2c2822; margin: 14px 0 38px;">2026년 12월 6일 일요일 오전 11시 30분</h2>
+
+    <div style="display: grid; grid-template-columns: repeat(7, 1fr); row-gap: 6px; margin-bottom: 8px;">
+      <span style="font-size: 13px; color: #c98b7a; letter-spacing: .05em;">일</span>
+      <span style="font-size: 13px; color: #7d746a; letter-spacing: .05em;">월</span>
+      <span style="font-size: 13px; color: #7d746a; letter-spacing: .05em;">화</span>
+      <span style="font-size: 13px; color: #7d746a; letter-spacing: .05em;">수</span>
+      <span style="font-size: 13px; color: #7d746a; letter-spacing: .05em;">목</span>
+      <span style="font-size: 13px; color: #7d746a; letter-spacing: .05em;">금</span>
+      <span style="font-size: 13px; color: #8a97a8; letter-spacing: .05em;">토</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(7, 1fr); row-gap: 4px;">
+      <sc-for list="{{ days }}" as="day" hint-placeholder-count="35">
+        <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center;">
+          <sc-if value="{{ day.plain }}" hint-placeholder-val="{{ true }}">
+            <span style="font-size: 15px; color: #4a443a;">{{ day.n }}</span>
+          </sc-if>
+          <sc-if value="{{ day.hl }}">
+            <span style="width: 34px; height: 34px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 500; box-shadow: 0 4px 12px rgba(140,110,55,.35);">6</span>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ showDday }}" hint-placeholder-val="{{ true }}">
+      <div style="margin-top: 44px; padding: 30px 20px 26px; background: #f7f2e9; border: 1px solid #e6ddce; border-radius: 6px;">
+        <div style="display: flex; align-items: flex-start; justify-content: center; gap: 10px;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 58px;">
+            <span style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 44px; line-height: 1; color: #3a352d;">{{ cd.d }}</span>
+            <span style="font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: #a59a89;">Days</span>
+          </div>
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 30px; color: #cfc3ae;">:</span>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 58px;">
+            <span style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 44px; line-height: 1; color: #3a352d;">{{ cd.h }}</span>
+            <span style="font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: #a59a89;">Hours</span>
+          </div>
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 30px; color: #cfc3ae;">:</span>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 58px;">
+            <span style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 44px; line-height: 1; color: #3a352d;">{{ cd.m }}</span>
+            <span style="font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: #a59a89;">Min</span>
+          </div>
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 30px; color: #cfc3ae;">:</span>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 58px;">
+            <span style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 44px; line-height: 1; color: #3a352d;">{{ cd.s }}</span>
+            <span style="font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: #a59a89;">Sec</span>
+          </div>
+        </div>
+        <p style="margin-top: 24px; font-family: 'Gowun Batang', serif; font-size: 15px; letter-spacing: .02em; line-height: 1.7; color: #6b6357;">준우 <span style="color: #cfa1a6;">♥</span> 혜민의 결혼식이 <span style="color: var(--accent);">{{ dday }}</span>일 남았습니다.</p>
+      </div>
+    </sc-if>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section style="padding: 78px clamp(20px, 6vw, 38px) 74px; background: #f4efe6; text-align: center;">
+    <p style="font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: .4em; text-transform: uppercase; color: var(--accent);">Gallery</p>
+    <h2 style="font-family: 'Gowun Batang', serif; font-size: 24px; letter-spacing: .06em; color: #2c2822; margin: 14px 0 36px;">순간의 기록</h2>
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+      <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="6">
+        <div style="position: relative; width: 100%; aspect-ratio: 1; border-radius: 4px; overflow: hidden;">
+          <image-slot id="{{ g.id }}" shape="rounded" radius="4" fit="cover" placeholder="{{ g.label }}"></image-slot>
+        </div>
+      </sc-for>
+    </div>
+    <button onClick="{{ toggleGallery }}" style="margin-top: 22px; white-space: nowrap; font-family: 'Noto Sans KR', sans-serif; font-size: 13px; letter-spacing: .08em; color: var(--accent); background: none; border: 1px solid #dfd4c1; border-radius: 22px; padding: 10px 22px; cursor: pointer;" style-hover="background: var(--accent); color: #fff; border-color: var(--accent);">{{ moreLabel }}</button>
+  </section>
+
+  <!-- ============ LOCATION ============ -->
+  <section style="padding: 78px clamp(18px, 5vw, 30px) 74px; text-align: center;">
+    <p style="font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: .4em; text-transform: uppercase; color: var(--accent);">Location</p>
+    <h2 style="font-family: 'Gowun Batang', serif; font-size: 24px; letter-spacing: .06em; color: #2c2822; margin: 14px 0 6px;">오시는 길</h2>
+    <p style="font-family: 'Cormorant Garamond', serif; font-size: 13px; letter-spacing: .28em; color: #a59a89; text-transform: uppercase;">La Domus Art Center</p>
+    <p style="font-size: 14px; line-height: 1.7; color: #6b6357; margin-top: 18px;">대전 유성구 동서대로 639<br>(원신흥동 578-6) 3F 라도무스홀</p>
+    <p style="font-size: 13px; letter-spacing: .06em; color: #8a8175; margin-top: 8px;">T. 042 - 823 - 5220</p>
+
+    <img src="assets/web-map.png" alt="라도무스 아트센터 약도" style="width: 100%; margin: 30px 0 34px; border: 1px solid #ece3d3; border-radius: 4px;">
+
+    <div style="text-align: left; display: grid; gap: 26px;">
+      <div>
+        <h3 style="font-family: 'Gowun Batang', serif; font-size: 16px; color: var(--accent); padding-bottom: 12px; border-bottom: 1px solid #e6ddce; margin-bottom: 14px;">자가용</h3>
+        <p style="font-size: 14px; line-height: 2; color: #4a443a;">유성IC 삼거리에서 '공주 · 계룡산' 방면 좌회전 후 직진 → 구암역3거리 좌회전 → 유성온천역사거리 우회전 → 도안고등학교 방면 500m 직진</p>
+      </div>
+      <div>
+        <h3 style="font-family: 'Gowun Batang', serif; font-size: 16px; color: var(--accent); padding-bottom: 12px; border-bottom: 1px solid #e6ddce; margin-bottom: 14px;">지하철 + 버스</h3>
+        <p style="font-size: 14px; line-height: 2; color: #4a443a;">유성온천역 6번 출구 → 115 · 106 · 706번 승차 → 홍도초등학교 정류장 하차 → 목원대사거리 방면 도보 500m</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACCOUNTS ============ -->
+  <section style="padding: 78px clamp(20px, 6vw, 34px) 74px; background: #f4efe6; text-align: center;">
+    <p style="font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: .4em; text-transform: uppercase; color: var(--accent);">With Heart</p>
+    <h2 style="font-family: 'Gowun Batang', serif; font-size: 24px; letter-spacing: .06em; color: #2c2822; margin: 14px 0 12px;">마음 전하실 곳</h2>
+    <p style="font-size: 13px; line-height: 1.8; color: #8a8175; margin-bottom: 34px;">축하의 마음을 담아 축의금을 전달하실 수 있도록<br>계좌번호를 안내드립니다.</p>
+
+    <div style="display: flex; gap: 8px; margin-bottom: 22px;">
+      <sc-for list="{{ accountTabs }}" as="tab" hint-placeholder-count="2">
+        <button onClick="{{ tab.onSelect }}" style="flex: 1; font-family: 'Gowun Batang', serif; font-size: 15px; letter-spacing: .1em; padding: 13px 0; border-radius: 4px; cursor: pointer; border: 1px solid {{ tab.border }}; background: {{ tab.bg }}; color: {{ tab.fg }};">{{ tab.side }}</button>
+      </sc-for>
+    </div>
+
+    <div style="display: grid; gap: 8px; text-align: left;">
+      <sc-for list="{{ activeAccounts }}" as="acc" hint-placeholder-count="3">
+        <div style="background: #fbf8f2; border: 1px solid #ece3d3; border-radius: 4px; padding: 15px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+          <div>
+            <p style="font-size: 12px; color: #a59a89; margin-bottom: 3px;">{{ acc.role }}</p>
+            <p style="font-size: 14px; color: #3a352d; letter-spacing: .02em;">{{ acc.bank }} <span style="color: #6b6357;">{{ acc.num }}</span></p>
+            <p style="font-size: 13px; color: #8a8175; margin-top: 2px;">{{ acc.name }}</p>
+          </div>
+          <button onClick="{{ acc.onCopy }}" style="flex-shrink: 0; white-space: nowrap; font-family: 'Noto Sans KR', sans-serif; font-size: 12px; letter-spacing: .04em; color: var(--accent); background: none; border: 1px solid var(--accent); border-radius: 20px; padding: 7px 14px; cursor: pointer;" style-hover="background: var(--accent); color: #fff;">{{ acc.label }}</button>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#a9854a&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[[&quot;#a9854a&quot;,&quot;#c2b8a3&quot;],[&quot;#8a7b63&quot;,&quot;#b8a98e&quot;],[&quot;#9c6b5a&quot;,&quot;#c7a99a&quot;],[&quot;#6b7a6e&quot;,&quot;#a8b3a5&quot;]]},&quot;grayscalePhotos&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showCountdown&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { cd: { d: '--', h: '--', m: '--', s: '--' }, dday: '--', copied: '', galleryOpen: false, activeSide: null };
+
+  componentDidMount() {
+    this.tick();
+    this.timer = setInterval(() => this.tick(), 1000);
+  }
+  componentWillUnmount() { clearInterval(this.timer); }
+
+  tick() {
+    const target = new Date('2026-12-06T11:30:00+09:00').getTime();
+    let diff = Math.max(0, target - Date.now());
+    const d = Math.floor(diff / 86400000); diff -= d * 86400000;
+    const dday = d;
+    const h = Math.floor(diff / 3600000); diff -= h * 3600000;
+    const m = Math.floor(diff / 60000); diff -= m * 60000;
+    const s = Math.floor(diff / 1000);
+    const p = n => String(n).padStart(2, '0');
+    this.setState({ cd: { d: p(d), h: p(h), m: p(m), s: p(s) }, dday });
+  }
+
+  copyNum(num) {
+    try { navigator.clipboard && navigator.clipboard.writeText(num); } catch (e) {}
+    this.setState({ copied: num });
+    clearTimeout(this._ct);
+    this._ct = setTimeout(() => this.setState({ copied: '' }), 1600);
+  }
+
+  renderVals() {
+    // December 2026 — the 1st falls on a Tuesday (2 leading blanks); wedding on the 6th
+    const days = [];
+    for (let i = 0; i < 2; i++) days.push({ n: '', empty: true, plain: false, hl: false });
+    for (let d = 1; d <= 31; d++) days.push({ n: d, empty: false, plain: d !== 6, hl: d === 6 });
+
+    const timeline = [
+      { date: '2021 Spring', title: '운명 같은 첫 만남', desc: '작은 골목길 카페에서\n우연이 운명이 된 날', slot: 'First Meeting' },
+      { date: '1000 Days', title: '함께 걸어온 나날들', desc: '서로의 하루가 되어\n어느새 당연해진 우리', slot: 'Everyday' },
+      { date: '2025 Winter', title: '프러포즈', desc: '같은 마음으로\n같은 미래를 향한 단 하나의 약속', slot: 'Proposal' },
+      { date: '2026.08.01', title: '웨딩 데이', desc: "너와 나, 이제 '우리'가 되는 날", slot: 'Wedding Day' },
+    ];
+
+    const expanded = this.state.galleryOpen;
+    const total = 20;
+    const gallery = [];
+    for (let i = 1; i <= (expanded ? total : 6); i++) gallery.push({ id: 'gal-' + i, label: String(i).padStart(2, '0') });
+    const moreLabel = expanded ? '접기 ⌃' : '더보기 ⌄';
+    const toggleGallery = () => this.setState(s => ({ galleryOpen: !s.galleryOpen }));
+
+    const rawGroups = [
+      { side: '신랑측', items: [
+        { role: '신랑', name: '준우', bank: '국민', num: '123456-01-234567' },
+        { role: '아버지', name: '이옥석', bank: '신한', num: '110-222-333333' },
+        { role: '어머니', name: '이명혜', bank: '농협', num: '302-1234-5678-01' },
+      ] },
+      { side: '신부측', items: [
+        { role: '신부', name: '혜민', bank: '카카오뱅크', num: '3333-01-2345678' },
+        { role: '아버지', name: '이정욱', bank: '우리', num: '1002-345-678901' },
+        { role: '어머니', name: '이지현', bank: '하나', num: '123-910111-12345' },
+      ] },
+    ];
+    const copied = this.state.copied;
+    const activeSide = this.state.activeSide;
+    const accountTabs = rawGroups.map((g, i) => ({
+      side: g.side,
+      bg: activeSide === i ? 'var(--accent)' : 'transparent',
+      fg: activeSide === i ? '#fff' : '#8a8175',
+      border: activeSide === i ? 'var(--accent)' : '#dfd4c1',
+      onSelect: () => this.setState(s => ({ activeSide: s.activeSide === i ? null : i })),
+    }));
+    const activeAccounts = activeSide === null ? [] : rawGroups[activeSide].items.map(a => ({
+      ...a,
+      label: copied === a.num ? '복사됨' : '복사',
+      onCopy: () => this.copyNum(a.num),
+    }));
+
+    return {
+      accent: this.props.accentColor ?? '#a9854a',
+      photoFilter: (this.props.grayscalePhotos ?? false) ? 'grayscale(1) contrast(1.02)' : 'none',
+      showDday: this.props.showCountdown ?? true,
+      cd: this.state.cd,
+      dday: this.state.dday,
+      days, timeline, gallery, accountTabs, activeAccounts, moreLabel, toggleGallery,
+    };
+  }
+}
+</script>
+</body>
+</html>
