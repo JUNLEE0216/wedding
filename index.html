@@ -35,10 +35,9 @@
   html, body { overflow-x: hidden; max-width: 100%; }
   img, .tl-media { max-width: 100%; }
   @media (max-width: 430px) {
-    .tl-row { grid-template-columns: 1fr !important; gap: 14px !important; }
-    .tl-row .tl-text { text-align: center !important; }
-    .tl-row .tl-media { order: -1; }
-    .tl-line, .tl-dot { display: none !important; }
+    .tl-row { gap: 18px !important; }
+    .tl-row .tl-text p { font-size: 12.5px !important; }
+    .tl-row .tl-text h3 { font-size: 16px !important; }
   }
   @keyframes coverFade { from { opacity: 0; transform: scale(1.04); } to { opacity: 1; transform: none; } }
   @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
@@ -140,7 +139,7 @@
       <div class="tl-row" style="position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; margin-bottom: 40px;">
         <span class="tl-dot" style="position: absolute; left: 50%; top: 50%; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); transform: translate(-50%,-50%); box-shadow: 0 0 0 4px #f4efe6;"></span>
         <div class="tl-media" style="position: relative; width: 100%; aspect-ratio: 4/3; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(80,65,45,.14);">
-          <img src="assets/tl3-ring.jpg" alt="프로포즈" style="width: 100%; height: 100%; object-fit: cover; object-position: center 62%; display: block;">
+          <img src="assets/web-tl3.png" alt="프로포즈" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </div>
         <div class="tl-text" style="text-align: left;">
           <p style="font-size: 13px; letter-spacing: .03em; color: #a59a89; margin-bottom: 8px;">대답은 "YES!"</p>
