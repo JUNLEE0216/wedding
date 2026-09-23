@@ -195,12 +195,20 @@
     </div>
 
     <sc-if value="{{ showDday }}" hint-placeholder-val="{{ true }}">
-      <div style="margin-top: 44px; padding: 30px 20px 26px; background: #f7f2e9; border: 1px solid #e6ddce; border-radius: 6px;">
-                <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
-          <span style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(44px, 13vw, 64px); line-height: 1; color: #3a352d;">{{ cd.d }}</span>
-          <span style="font-family: 'Cormorant Garamond', serif; font-size: clamp(10px, 2.8vw, 12px); letter-spacing: .24em; text-transform: uppercase; color: #a59a89;">Days</span>
+      <div style="margin-top: 44px; padding: 28px 24px 24px; background: #f7f2e9; border: 1px solid #e6ddce; border-radius: 6px; text-align: left;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between;">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: .28em; text-transform: uppercase; color: #a59a89;">D−Day</span>
+          <span style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(34px, 10vw, 44px); line-height: 1; color: #3a352d;">{{ dday }}</span>
         </div>
-        <p style="margin-top: 24px; font-family: 'Gowun Batang', serif; font-size: clamp(13px, 3.8vw, 15px); letter-spacing: .02em; line-height: 1.7; color: #6b6357;">준우 <span style="color: #cfa1a6;">♥</span> 혜민의 결혼식이 <span style="color: var(--accent);">{{ dday }}</span>일 남았습니다.</p>
+        <div style="position: relative; height: 3px; background: #e2d7c2; margin: 20px 0 12px;">
+          <span style="position: absolute; left: 0; top: 0; bottom: 0; width: {{ progress }}; background: var(--accent);"></span>
+          <span style="position: absolute; top: -3px; left: {{ progress }}; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); transform: translateX(-50%); box-shadow: 0 0 0 3px #f7f2e9;"></span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 12px; letter-spacing: .04em; color: #a59a89;">
+          <span>2017. 02. 16 첫 만남</span>
+          <span style="color: var(--accent);">2026. 12. 06</span>
+        </div>
+        <p style="font-family: 'Gowun Batang', serif; font-size: clamp(13px, 3.8vw, 15px); line-height: 1.7; color: #6b6357; text-align: center; margin-top: 22px;">준우 <span style="color: #cfa1a6;">♥</span> 혜민의 결혼식이 <span style="color: var(--accent);">{{ dday }}</span>일 남았습니다.</p>
       </div>
     </sc-if>
     
@@ -269,7 +277,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#a9854a&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[[&quot;#a9854a&quot;,&quot;#c2b8a3&quot;],[&quot;#8a7b63&quot;,&quot;#b8a98e&quot;],[&quot;#9c6b5a&quot;,&quot;#c7a99a&quot;],[&quot;#6b7a6e&quot;,&quot;#a8b3a5&quot;]]},&quot;grayscalePhotos&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showCountdown&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
 class Component extends DCLogic {
-  state = { cd: { d: '--' }, dday: '--', copied: '', galleryOpen: false, activeSide: null };
+  state = { cd: { d: '--' }, dday: '--', progress: '0%', copied: '', galleryOpen: false, activeSide: null };
 
   componentDidMount() {
     this.tick();
@@ -278,10 +286,13 @@ class Component extends DCLogic {
   componentWillUnmount() { clearInterval(this.timer); }
 
   tick() {
+    const start = new Date('2017-02-16T00:00:00+09:00').getTime();
     const target = new Date('2026-12-06T11:30:00+09:00').getTime();
-    const diff = Math.max(0, target - Date.now());
+    const now = Date.now();
+    const diff = Math.max(0, target - now);
     const d = Math.floor(diff / 86400000);
-    this.setState({ cd: { d: String(d).padStart(2, '0') }, dday: d });
+    const pct = Math.min(100, Math.max(0, ((now - start) / (target - start)) * 100));
+    this.setState({ cd: { d: String(d).padStart(2, '0') }, dday: d, progress: pct.toFixed(2) + '%' });
   }
 
   copyNum(num) {
@@ -345,6 +356,7 @@ class Component extends DCLogic {
       showDday: this.props.showCountdown ?? true,
       cd: this.state.cd,
       dday: this.state.dday,
+      progress: this.state.progress,
       days, gallery, accountTabs, activeAccounts,
     };
   }
