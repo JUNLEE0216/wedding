@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -41,6 +41,8 @@
   @keyframes twinkle { 0%,100% { opacity: .2; transform: scale(.6); } 50% { opacity: 1; transform: scale(1.1); } }
   @keyframes sway { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
   @keyframes fall { 0% { opacity: 0; transform: translateY(-8px) rotate(0); } 15% { opacity: 1; } 100% { opacity: 0; transform: translateY(64px) rotate(220deg); } }
+  html, body { touch-action: pan-x pan-y; }
+  img { -webkit-touch-callout: none; -webkit-user-drag: none; user-select: none; }
 </style>
 </helmet>
 <div style="--accent: {{ accent }}; --photoFilter: {{ photoFilter }}; width: 100%; max-width: 560px; margin: 0 auto; background: #fbf8f2; color: #2c2822; overflow: clip;">
@@ -205,10 +207,10 @@
           <span style="position: absolute; top: -3px; left: {{ progress }}; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); transform: translateX(-50%); box-shadow: 0 0 0 3px #f7f2e9;"></span>
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 12px; letter-spacing: .04em; color: #a59a89;">
-          <span>2017. 02. 16 첫 만남</span>
+          <span>100일</span>
           <span style="color: var(--accent);">2026. 12. 06</span>
         </div>
-        <p style="font-family: 'Gowun Batang', serif; font-size: clamp(13px, 3.8vw, 15px); line-height: 1.7; color: #6b6357; text-align: center; margin-top: 22px;">준우 <span style="color: #cfa1a6;">♥</span> 혜민의 결혼식이 <span style="color: var(--accent);">{{ dday }}</span>일 남았습니다.</p>
+        <p style="font-family: 'Gowun Batang', serif; font-size: clamp(13px, 3.8vw, 15px); line-height: 1.7; color: #6b6357; text-align: center; margin-top: 22px;"><span style="color: #cfa1a6;"></span>결혼식이 <span style="color: var(--accent);">{{ dday }}</span>일 남았습니다.</p>
       </div>
     </sc-if>
     
@@ -224,8 +226,8 @@
     <div style="padding: 0 clamp(20px, 6vw, 38px);">
       <sc-for list="{{ gallery }}" as="p" hint-placeholder-count="10">
         <div style="position: sticky; top: {{ p.top }}; padding-bottom: 46px;">
-          <div style="position: relative; border-radius: 4px; overflow: hidden; background: #e6ddce; box-shadow: 0 -2px 0 rgba(255,253,248,.9), 0 18px 40px rgba(80,65,45,.22); aspect-ratio: 4/5; transform: rotate({{ p.rot }}); filter: var(--photoFilter);">
-            <img src="{{ p.src }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          <div style="position: relative; border-radius: 4px; overflow: hidden; background: #e6ddce; box-shadow: 0 -2px 0 rgba(255,253,248,.9), 0 18px 40px rgba(80,65,45,.22); transform: rotate({{ p.rot }}); filter: var(--photoFilter);">
+            <img src="{{ p.src }}" alt="" style="width: 100%; height: auto; display: block;">
             <span style="position: absolute; left: 16px; bottom: 14px; font-family: 'Cormorant Garamond', serif; font-size: 13px; letter-spacing: .3em; color: #fffdf8; text-shadow: 0 1px 6px rgba(0,0,0,.5);">{{ p.label }}</span>
           </div>
         </div>
@@ -286,7 +288,7 @@ class Component extends DCLogic {
   componentWillUnmount() { clearInterval(this.timer); }
 
   tick() {
-    const start = new Date('2017-02-16T00:00:00+09:00').getTime();
+    const start = new Date('2026-06-16T00:00:00+09:00').getTime();
     const target = new Date('2026-12-06T11:30:00+09:00').getTime();
     const now = Date.now();
     const diff = Math.max(0, target - now);
@@ -315,7 +317,7 @@ class Component extends DCLogic {
       { date: '2026.08.01', title: '웨딩 데이', desc: "너와 나, 이제 '우리'가 되는 날", slot: 'Wedding Day' },
     ];
 
-    const galleryFiles = ['q1','q7','q3','q4','q5','q6','q2','q9','q10','q12'];
+    const galleryFiles = ['q1','q7','q3','q4','q5','q6','q2','q9','q10','q13','q14','q12'];
     const gallery = galleryFiles.map((f, i) => ({
       src: 'assets/' + f + '.jpg',
       label: String(i + 1).padStart(2, '0'),
@@ -385,6 +387,14 @@ class Component extends DCLogic {
       if (b) { b.style.opacity = '.45'; clearInterval(t); }
     }, 200);
   })();
+  document.addEventListener('gesturestart', function (e) { e.preventDefault(); });
+  document.addEventListener('touchmove', function (e) { if (e.touches.length > 1) e.preventDefault(); }, { passive: false });
+  var lastTap = 0;
+  document.addEventListener('touchend', function (e) {
+    var now = Date.now();
+    if (now - lastTap < 300) e.preventDefault();
+    lastTap = now;
+  }, { passive: false });
 </script>
 </body>
 </html>
