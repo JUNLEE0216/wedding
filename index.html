@@ -288,7 +288,7 @@ class Component extends DCLogic {
   componentWillUnmount() { clearInterval(this.timer); }
 
   tick() {
-    const start = new Date('2026-06-16T00:00:00+09:00').getTime();
+    const start = new Date('2026-08-28T00:00:00+09:00').getTime();
     const target = new Date('2026-12-06T11:30:00+09:00').getTime();
     const now = Date.now();
     const diff = Math.max(0, target - now);
